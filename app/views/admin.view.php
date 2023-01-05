@@ -49,14 +49,18 @@
               for ($i=0; $i < $count  ; $i++) :?>
                <div class="col">
                 <h2><?=$title[$i];?></h2>
-                <a href="admin?edit=<?=$imageId[$i]?>" class="button">Edit</a>
+                <a href="admin?edit=<?=$imageId[$i]?>" class="button">Edit</a><br>
+                  <a href="admin?delete_album=<?=$imageId[$i];?>" class="text-danger btn btn-danger">Delete Album</a>
                   <?php
                    for($j = 0; $j <count($image[$i]); $j++): ?>
                   <img src="<?=$image[$i][$j]; ?>" >
+                  <?php 
+                  $count_second = count($image[$i]);
+                  if( $count_second != 1): ?>
                   <a href="admin?delete_image=<?=$imageId[$i];?>&imgi=<?=$j;?>" class="text-danger btn-img">Delete image</a><br>
+                <?php endif ;?>
                   <?php endfor; ?>
                 
-                  <a href="admin?delete_album=<?=$imageId[$i];?>" class="text-danger btn btn-danger">Delete Album</a>
                 </div>
 
               <?php endfor; 

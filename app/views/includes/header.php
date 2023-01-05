@@ -17,9 +17,12 @@
         <a class="nav-link active" aria-current="page" href="<?=ROOT?>">Home</a>
         <?php if(isset($_SESSION['USER'])): ?>
         <a class="nav-link" href="<?=ROOT?>/admin">Admin</a>
-      <?php endif; ?>
-        <a class="nav-link" href="<?=ROOT?>/login">Login</a>
         <a class="nav-link" href="<?=ROOT?>/logout">Logout</a>
+      <?php endif; ?>
+        <?php if(!isset($_SESSION['USER'])): ?>
+        <a class="nav-link" href="<?=ROOT?>/login">Login</a>
+       <a class="nav-link" href="<?=ROOT?>/signup">Signup</a>
+      <?php endif; ?>
       </ul>
     </div>
       </nav>

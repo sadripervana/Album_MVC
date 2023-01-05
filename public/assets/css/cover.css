@@ -147,14 +147,14 @@ img:hover {
   background-color: #04AA6D; /* Green */
   border: none;
   color: white;
-  padding: 15px 20px;
+  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
 }
 .button-cancel{
-  background-color: red; /* Green */
+  background-color: red; /* red */
   border: none;
   color: white;
   padding: 15px 20px;
@@ -192,10 +192,6 @@ img:hover {
 .rowAdmin{
     display: flex;
     flex-wrap: wrap;
-}
-.content {
-    padding: 15px;!important;
-
 }
   .row {
     justify-content: center;
@@ -246,11 +242,6 @@ h1{
 }
 
 
-@media (max-width : 768px){
-    .grid .grid-item{
-        width: calc(50% - 20px);
-    }
-}
 
 @media (max-width : 574px){
     .toggle-button{
@@ -268,17 +259,10 @@ h1{
         text-align: center;
     }
 
-    .search-box{
-        border-right: none;
-    }
-
     .collapse-toggle{
         max-height: 500px;
     }
 
-    .grid .grid-item{
-        width: calc(100% - 20px);
-    }
 
     #site-main{
         margin-top: 6em;

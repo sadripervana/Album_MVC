@@ -6,7 +6,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 	define('DBNAME', 'my_db');
 	define('DBHOST', 'localhost');
 	define('DBUSER', 'root');
-	define('DBPASS', '');
+	define('DBPASS', '96Anavrepdiu');
 	define('BASEURL', $_SERVER['DOCUMENT_ROOT'].'/testmvc/');
 	
 	define('ROOT', 'http://localhost:8000');
