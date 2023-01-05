@@ -8,9 +8,17 @@ class App
 
 	private function splitURL()
 	{
-		$URL = $_GET['url'] ?? 'home';
+		 if($_SERVER['REQUEST_URI'] == '/'){
+			$URL = 'home';
+		}
+			 else { $URL = $_SERVER['REQUEST_URI'];
+			}
+
+		if (str_contains($URL, '?')) {
+			$URL = substr($URL, 0, strpos($URL, "?"));
+		}
 		$URL = explode("/", trim($URL,"/"));
-		return $URL;	
+		return $URL;
 	}
 
 	public function loadController()

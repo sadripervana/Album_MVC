@@ -22,7 +22,7 @@ a{
 }
 
 .container {
-    max-width: 1250px;
+    max-width: 1200px;
     padding: 0 15px;
     margin: auto;
 }
@@ -143,6 +143,27 @@ img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button-cancel{
+  background-color: red; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .btn-img{
   background-color: #e7e7e7;
   border: none;
@@ -168,9 +189,23 @@ img:hover {
     display: flex;
     flex-wrap: wrap;
 }
+.rowAdmin{
+    display: flex;
+    flex-wrap: wrap;
+}
+.content {
+    padding: 15px;!important;
 
+}
+  .row {
+    justify-content: center;
+}
 .content.row {
   width: 200px;
+}
+
+h1{
+    text-align: center;
 }
 
 .col1{

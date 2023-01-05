@@ -2,7 +2,7 @@
 
       <nav class="container navbar">
 
-        <a href="index.php" class="nav-brand text-dark">
+        <a href="<?=ROOT?>" class="nav-brand text-dark">
         Albume
       </a>
     <!-- toggle button -->
@@ -16,7 +16,7 @@
       <ul class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="<?=ROOT?>">Home</a>
         <?php if(isset($_SESSION['USER'])): ?>
-        <a class="nav-link" href="<?=ROOT?>/admin?id=<?=$id?>">Admin</a>
+        <a class="nav-link" href="<?=ROOT?>/admin">Admin</a>
       <?php endif; ?>
         <a class="nav-link" href="<?=ROOT?>/login">Login</a>
         <a class="nav-link" href="<?=ROOT?>/logout">Logout</a>

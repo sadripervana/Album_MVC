@@ -7,10 +7,9 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 	define('DBHOST', 'localhost');
 	define('DBUSER', 'root');
 	define('DBPASS', '');
-	define('DBDRIVER', '');
 	define('BASEURL', $_SERVER['DOCUMENT_ROOT'].'/testmvc/');
 	
-	define('ROOT', 'http://localhost/testmvc/public');
+	define('ROOT', 'http://localhost:8000');
 
 }else
 {
@@ -19,7 +18,6 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 	define('DBHOST', 'localhost');
 	define('DBUSER', 'root');
 	define('DBPASS', '');
-	define('DBDRIVER', '');
 
 	define('ROOT', 'https://www.yourwebsite.com');
 

@@ -130,7 +130,6 @@ Trait Model
 		$query .= " where $id_column = :$id_column ";
 
 		$data[$id_column] = $id;
-
 		$this->query($query, $data);
 		return false;
 

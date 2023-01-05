@@ -36,7 +36,7 @@ function makePhoto($photoCount,$dbpath,$allowed,$errors){
 		 if($i != 0){
 			 $dbpath .= ',';
 		 }
-		 $dbpath .= '../public/assets/images/' . $uploadName;
+		 $dbpath .= '/assets/images/' . $uploadName;
 		 if($mimeType != 'image'){
 			 $errors[] = 'The File must be an image.';
 		 }

@@ -12,21 +12,22 @@
         <?php $count = count($image);
         for ($i=0; $i < $count  ; $i++) :?>
          <div class="col">
-          <div class="fotorama">
+          <div class="fotorama"
+     data-nav="thumbs"
+     data-thumbmargin="10"
+     data-width="800"
+     data-height="600">
             <?php
              for($j = 0; $j <count($image[$i]); $j++): ?>
-            <img src="<?=$image[0][$j]; ?>">
+            <img src="<?=$image[$i][$j]; ?>">
             <?php endfor; ?>
           </div>
-          <h3><?=$title[$i];?></h3>
+          <h1><?=$title[$i];?></h1>
         </div>
         <?php endfor; 
               endif;?>
       </div>
     </div>
-    <h4>Hi, <?=$username?></h4>
-    <h4>Hi, <?=$password?></h4>
-    <h1>Cover your page.</h1>
   </main>
   </div>
 </div>
