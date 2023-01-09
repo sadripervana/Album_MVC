@@ -12,7 +12,8 @@ class AdminModel
 		'user_id',
 		'status',
 		'like',
-		'dislike'
+		'dislike',
+		'description'
 	];
 
 	public function validatePhoto()
@@ -39,6 +40,10 @@ class AdminModel
 			{
 				$this->errors['file'] = "File is required";
 			}
+		}
+		if(empty($data['description']))
+		{
+			$this->errors['description'] = "Description is required";
 		}
 		
 		if(empty($data['status']))

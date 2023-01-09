@@ -4,15 +4,15 @@
       <?php include_once('includes/header.php'); ?>
     <div class="content">
      <main class="form-signin">
-      <form method="<?=((isset($_GET['edit']))?'GET':'POST');?>" enctype="multipart/form-data">
+      <form method="POST" enctype="multipart/form-data">
 
     <?php if(!empty($errors)):?>
       <div class="alert alert-danger">
         <?= implode("<br>", $errors)?>
       </div>
     <?php endif;?>
-    <h2 class="h3 mb-3 fw-normal">
-      <?=((isset($_GET['edit']))?'Edit':'Add a New');?> Album</h2>
+    <h1 class="h3 mb-3 fw-normal">
+      <?=((isset($_GET['edit']))?'Edit':'Add a New');?> Album</h1>
     <label for="title">Enter Title</label><br>
      <input class="form-control" type="text" name="title" id="title" value="<?=$titleEdit;?>">
      <br>
@@ -34,7 +34,7 @@
         <option value="2">Private</option>
       </select>
     </div>
-    <button type="submit" name="firstButton"><?=((isset($_GET['edit']))?'Edit':'Upload');?></button>
+    <button type="submit" name="<?=((isset($_GET['edit']))?'editButton':'firstButton');?>"><?=((isset($_GET['edit']))?'Edit':'Upload');?></button>
     <?php if(isset($_GET['edit'])): ?>
       <a href="admin" class="button-cancel">Cancel</a>
     <?php endif; ?>
@@ -42,8 +42,8 @@
 
   <?php if(!isset($_GET['edit'])): ?>
   <form action="" method="post" enctype="multipart/form-data">
-    <h2>Upload Only image</h2>
-    <label for="file">Enter Image</label>
+    <h2>Upload Only image</h2><br>
+    <label for="file">Enter Image</label><br>
     <input type="hidden" name="user_id" value="<?=$id?>">
     <input type="file" id="file" name="photo[]" multiple><br>
     <button type="submit" name="secondButton">Upload</button>

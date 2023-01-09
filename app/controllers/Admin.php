@@ -43,21 +43,17 @@ class Admin
 					redirect("admin");
 				}
 				$data['errors'] = $admin->errors;
+			}	
+			
+			if(isset($_POST['editButton'])){
+				$id = $_GET['edit'];
+				if($admin->validate($_POST))
+				{	
+					$admin->update($id,$_POST);
+					redirect("admin");
+				}
+				$data['errors'] = $admin->errors;
 			}			
-		}
-		
-		if(isset($_GET['user_id']))
-		{	
-			if($admin->validateGet($_GET)){
-				$id = $_GET['id'];
-				$data['title'] = $_GET['title'];
-				$data['status'] = $_GET['status'];
-				$data['description'] = $_GET['description'];
-				array_shift($data);
-				$admin->update($id, $data);
-				redirect("admin");
-			}
-			$data['errors'] = $admin->errors;			
 		}
 
 		$row = $admin->where($arr);

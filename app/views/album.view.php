@@ -36,7 +36,7 @@
                echo 'fa-solid ';
               }
                 ?> 
-            fa-thumbs-up"> Like <?=$likes[$i];?></i></a> &nbsp &nbsp
+            fa-thumbs-up"> <?=$likes[$i];?></i></a> &nbsp &nbsp
           <a href="album?id=<?=$_GET['views'];?>&dislikes=<?=$imageId[$i]?>"><i class="
             <?php if($dislikes[$i] == 0)
             {
@@ -46,7 +46,7 @@
                echo 'fa-solid ';
               }
                ?> 
-           fa-thumbs-down"> Dislike <?=$dislikes[$i];?></i></a>
+           fa-thumbs-down"> <?=$dislikes[$i];?></i></a>
            <?php endif;  ?>
           <?php if(isset($_GET['view'])): ?>
           <div class="rowAdmin ">
@@ -54,7 +54,6 @@
             <?php $count = count($image);
               for ($i=0; $i < $count  ; $i++) :?>
                <div class="col">
-                <h2><?=$title[$i];?></h2>
                 <a href="admin?edit=<?=$imageId[$i]?>" class="button">Edit</a>
                 <a href="album?view=<?=$id;?>&delete_album=<?=$imageId[$i];?>" class="text-danger btn btn-danger">Delete Album</a>
                 <div class="rowPhoto">
