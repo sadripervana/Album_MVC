@@ -45,6 +45,7 @@ class AdminModel
 		{
 			$this->errors['status'] = "Status is required";
 		}
+		
 		if(empty($data['title']))
 		{
 			$this->errors['title'] = "Title is required";
@@ -59,7 +60,12 @@ class AdminModel
 	}
 
 	public function validateGet($GET)
-	{
+	{	
+
+		if(empty($_GET['description']))
+		{
+			$this->errors['description'] = "Description is required";
+		}
 		if(empty($_GET['status']))
 		{
 			$this->errors['status'] = "Status is required";

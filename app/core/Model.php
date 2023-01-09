@@ -115,8 +115,8 @@ Trait Model
 	{
 		
 		
-		$query =  "INSERT INTO $this->table (title, image, user_id, status)
-                     VALUES (:title, :image, :user_id, :status)";
+		$query =  "INSERT INTO $this->table (title, image, user_id, status, description)
+                     VALUES (:title, :image, :user_id, :status,:description)";
 		$this->queryImage($query, $POST, $FILES);
 
 		return false;

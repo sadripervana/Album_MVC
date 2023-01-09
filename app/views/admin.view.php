@@ -15,7 +15,9 @@
       <?=((isset($_GET['edit']))?'Edit':'Add a New');?> Album</h2>
     <label for="title">Enter Title</label><br>
      <input class="form-control" type="text" name="title" id="title" value="<?=$titleEdit;?>">
-      
+     <br>
+    <label for="description">Enter Description</label><br>
+    <textarea class="form-control" name="description" id="description" cols="71" rows="6"><?=$descriptionEdit;?></textarea>
     <input type="hidden" name="user_id" value="<?=$id?>">
     <div class="form-floating">
       <?php if(!isset($_GET['edit'])): ?>
@@ -38,6 +40,7 @@
     <?php endif; ?>
   </form>
 
+  <?php if(!isset($_GET['edit'])): ?>
   <form action="" method="post" enctype="multipart/form-data">
     <h2>Upload Only image</h2>
     <label for="file">Enter Image</label>
@@ -45,6 +48,7 @@
     <input type="file" id="file" name="photo[]" multiple><br>
     <button type="submit" name="secondButton">Upload</button>
   </form>
+  <?php endif; ?>
 </main>
           
 
@@ -56,8 +60,6 @@
                 <h2><?=$title[$i];?></h2>
                 <a href="admin?edit=<?=$imageId[$i]?>" class="button">Edit</a>
                 <a href="album?view=<?=$imageId[$i]?>" class="button">View</a><br>
-                <a href="admin?delete_album=<?=$imageId[$i];?>" class="text-danger btn btn-danger" style="width:97%">Delete Album</a>
-                
                   <img src="<?=$image[$i][0]; ?>" >
                   <?php $count_second = count($image[$i]);?>
                 </div>

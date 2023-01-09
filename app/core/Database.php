@@ -137,7 +137,8 @@ Trait Database
 			'title' => $POST['title'],
 			'image' => $dbpath, 
 			'user_id' => $POST['user_id'],
-			'status' => $POST['status']
+			'status' => $POST['status'],
+			'description' => $POST['description']
 		]);
 
 		if($check)

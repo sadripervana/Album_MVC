@@ -5,7 +5,6 @@
   <?php include_once('includes/header.php'); ?>
    <main id="site-main">
       <div class="content">
-          <div class="colHome">
           <?php $count = count($first_name);
           for ($i=0; $i < $count  ; $i++) :?>
       <div class="a-box">
@@ -26,7 +25,7 @@
   </a>
   </div>
     <?php endfor; ?>
-    
+    </div>
   </main>
 </div>
   <?php include_once("includes/footer.php"); ?>

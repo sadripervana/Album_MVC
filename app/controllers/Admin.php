@@ -18,8 +18,10 @@ class Admin
 			$arr['id'] = $_GET['edit'];
 			$rowEdit = $admin->first($arr);
 			$data['titleEdit'] = $rowEdit->title;
+			$data['descriptionEdit'] = $rowEdit->description;
 			$data['statusEdit'] = $rowEdit->status;
 		}
+		$data['descriptionEdit'] = $data['descriptionEdit']??'';
 		$data['titleEdit'] = $data['titleEdit']?? '';
 
 
@@ -50,6 +52,7 @@ class Admin
 				$id = $_GET['id'];
 				$data['title'] = $_GET['title'];
 				$data['status'] = $_GET['status'];
+				$data['description'] = $_GET['description'];
 				array_shift($data);
 				$admin->update($id, $data);
 				redirect("admin");
