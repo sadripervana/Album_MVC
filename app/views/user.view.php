@@ -26,12 +26,33 @@
             <?php endfor; ?>
           </div>
           <h1><?=$title[$i];?></h1>
+          <a href="users?id=<?=$_GET['id'];?>&likes=<?=$imageId[$i]?>">
+            <i id="id" 
+            class="<?php
+             if($likes[$i] == 0)
+            {
+              echo 'fa-regular ';
+            }
+              else {
+               echo 'fa-solid ';
+              }
+                ?> 
+            fa-thumbs-up"> Like <?=$likes[$i];?></i></a> &nbsp &nbsp
+          <a href="users?id=<?=$_GET['id'];?>&dislikes=<?=$imageId[$i]?>"><i class="
+            <?php if($dislikes[$i] == 0)
+            {
+              echo 'fa-regular ';
+            }
+              else {
+               echo 'fa-solid ';
+              }
+                ?> 
+           fa-thumbs-down"> Dislike <?=$dislikes[$i];?></i></a>
         </div>
         <?php endfor; 
               endif;?>
       </div>
     </div>
   </main>
-  </div>
 </div>
 <?php include_once("includes/footer.php"); ?>

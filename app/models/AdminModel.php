@@ -11,6 +11,8 @@ class AdminModel
 		'image',
 		'user_id',
 		'status',
+		'like',
+		'dislike'
 	];
 
 	public function validatePhoto()

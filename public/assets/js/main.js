@@ -8,4 +8,4 @@ toggle.addEventListener('click' , function(){
 
 $(function () {
         $('.fotorama').fotorama({'loop': true, 'autoplay': true});
-    });
+});

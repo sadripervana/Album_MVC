@@ -291,3 +291,42 @@ h1{
   color: #04bcff;
   font-size: 18px;
 }
+
+.post-comments {
+    padding-left: 7em;
+}
+
+.display-1{
+   font-size: 22px;
+ }
+
+ .secondary-title{
+    font-family: 'Poppins' , sans-serif;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.py-2{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.form-control{
+    width: 100%;
+    border: 2px solid var(--primary-color);
+    padding: 1em;
+    font-size: 18px;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+

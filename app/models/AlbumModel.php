@@ -11,5 +11,7 @@ class AlbumModel
 		'image',
 		'user_id',
 		'status',
+		'likes',
+		'dislike'
 	];
 }
