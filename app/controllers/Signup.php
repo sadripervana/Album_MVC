@@ -15,8 +15,10 @@ class Signup
 		{
 			$user = new User;
 			if($user->validate($_POST))
-			{
-				$user->insert($_POST);
+			{	
+				$_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+				$user->userPhoto($_POST, $_FILES);
 				redirect('login');
 			}
 

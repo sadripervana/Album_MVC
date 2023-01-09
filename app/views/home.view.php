@@ -1,34 +1,32 @@
 <?php include_once('includes/head.php'); ?>
   <body>
-    <div class="container">
+  <div class="container">
 
-<?php include_once('includes/header.php'); ?>
- <main id="site-main">
-    <div class="content">
-          
-          
-      <div class="row ">
-        <?php if(isset($image)): ?>
-        <?php $count = count($image);
-        for ($i=0; $i < $count  ; $i++) :?>
-         <div class="col">
-          <div class="fotorama"
-     data-nav="thumbs"
-     data-thumbmargin="10"
-     data-width="800"
-     data-height="600">
-            <?php
-             for($j = 0; $j <count($image[$i]); $j++): ?>
-            <img src="<?=$image[$i][$j]; ?>">
-            <?php endfor; ?>
+  <?php include_once('includes/header.php'); ?>
+   <main id="site-main">
+      <div class="content">
+          <div class="colHome">
+          <?php $count = count($first_name);
+          for ($i=0; $i < $count  ; $i++) :?>
+      <div class="a-box">
+        <a href="/users?id=<?=$user_id[$i];?>">
+        <div class="img-container">
+          <div class="img-inner">
+            <div class="inner-skew">
+              <img src="<?=$user_image[$i]?>">
+            </div>
           </div>
-          <h1><?=$title[$i];?></h1>
-        </div>
-        <?php endfor; 
-              endif;?>
+      </div>
+    <div class="text-container">
+      <h3><?=$first_name[$i];?> <?=$last_name[$i];?></h3>
+      <div>
+        Joined:<?=$date[$i];?>
       </div>
     </div>
-  </main>
+  </a>
   </div>
+    <?php endfor; ?>
+    
+  </main>
 </div>
-<?php include_once("includes/footer.php"); ?>
+  <?php include_once("includes/footer.php"); ?>

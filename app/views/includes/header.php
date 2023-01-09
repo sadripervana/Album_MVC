@@ -17,7 +17,8 @@
         <a class="nav-link active" aria-current="page" href="<?=ROOT?>">Home</a>
         <?php if(isset($_SESSION['USER'])): ?>
         <a class="nav-link" href="<?=ROOT?>/admin">Admin</a>
-        <a class="nav-link" href="<?=ROOT?>/logout">Logout</a>
+        <a class="nav-link" href="<?=ROOT?>/profile">Edit Profile</a>
+        <a class="nav-link" href="<?=ROOT?>/logout">Welcome <?=$_SESSION['USER']->first_name;?> (logout)</a>
       <?php endif; ?>
         <?php if(!isset($_SESSION['USER'])): ?>
         <a class="nav-link" href="<?=ROOT?>/login">Login</a>

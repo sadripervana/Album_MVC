@@ -4,7 +4,7 @@
       <?php include_once('includes/header.php'); ?>
     <div class="content">
      <main class="form-signin">
-  <form method="<?=((isset($_GET['edit']))?'GET':'POST');?>" enctype="multipart/form-data">
+      <form method="<?=((isset($_GET['edit']))?'GET':'POST');?>" enctype="multipart/form-data">
 
     <?php if(!empty($errors)):?>
       <div class="alert alert-danger">
@@ -32,41 +32,38 @@
         <option value="2">Private</option>
       </select>
     </div>
-    <input type="submit" value="<?=((isset($_GET['edit']))?'Edit':'Upload');?>">
+    <button type="submit" name="firstButton"><?=((isset($_GET['edit']))?'Edit':'Upload');?></button>
     <?php if(isset($_GET['edit'])): ?>
       <a href="admin" class="button-cancel">Cancel</a>
     <?php endif; ?>
+  </form>
+
+  <form action="" method="post" enctype="multipart/form-data">
+    <h2>Upload Only image</h2>
+    <label for="file">Enter Image</label>
+    <input type="hidden" name="user_id" value="<?=$id?>">
+    <input type="file" id="file" name="photo[]" multiple><br>
+    <button type="submit" name="secondButton">Upload</button>
   </form>
 </main>
           
 
       <div class="rowAdmin ">
-        <?php 
-        if(!empty($image[0][0]) ): 
-
-          ?>
-              <?php $count = count($image);
+        <?php if(!empty($image[0][0]) ):?>
+            <?php $count = count($image);
               for ($i=0; $i < $count  ; $i++) :?>
                <div class="col">
                 <h2><?=$title[$i];?></h2>
-                <a href="admin?edit=<?=$imageId[$i]?>" class="button">Edit</a><br>
-                  <a href="admin?delete_album=<?=$imageId[$i];?>" class="text-danger btn btn-danger">Delete Album</a>
-                  <?php
-                   for($j = 0; $j <count($image[$i]); $j++): ?>
-                  <img src="<?=$image[$i][$j]; ?>" >
-                  <?php 
-                  $count_second = count($image[$i]);
-                  if( $count_second != 1): ?>
-                  <a href="admin?delete_image=<?=$imageId[$i];?>&imgi=<?=$j;?>" class="text-danger btn-img">Delete image</a><br>
-                <?php endif ;?>
-                  <?php endfor; ?>
+                <a href="admin?edit=<?=$imageId[$i]?>" class="button">Edit</a>
+                <a href="album?view=<?=$imageId[$i]?>" class="button">View</a><br>
+                <a href="admin?delete_album=<?=$imageId[$i];?>" class="text-danger btn btn-danger" style="width:97%">Delete Album</a>
                 
+                  <img src="<?=$image[$i][0]; ?>" >
+                  <?php $count_second = count($image[$i]);?>
                 </div>
-
-              <?php endfor; 
+            <?php endfor; 
             endif;?>
       </div>
-            
 </div>
 
     </div>

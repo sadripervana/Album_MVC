@@ -12,15 +12,26 @@ class User
 	protected $table = 'users';
 
 	protected $allowedColumns = [
-
+		'first_name',
+		'last_name',
 		'email',
 		'password',
+		'user_image'
 	];
 
 	public function validate($data)
 	{
 		$this->errors = [];
 
+		if(empty($data['first_name']))
+		{
+			$this->errors['first_name'] = "First Name is required";
+		}
+
+		if(empty($data['last_name']))
+		{
+			$this->errors['last_name'] = "Last Name is required";
+		}
 		if(empty($data['email']))
 		{
 			$this->errors['email'] = "Email is required";
@@ -35,10 +46,6 @@ class User
 			$this->errors['password'] = "Password is required";
 		}
 		
-		if(empty($data['terms']))
-		{
-			$this->errors['terms'] = "Please accept the terms and conditions";
-		}
 
 		if(empty($this->errors))
 		{

@@ -18,6 +18,17 @@ function redirect($path)
 	die;
 }
 
+function is_loged_in(){
+	if(isset($_SESSION['USER']) ){
+		return true;
+	}
+	return false;
+}
+
+function login_error_redirect($url = 'login'){
+	redirect($url);
+}
+
 
 function makePhoto($photoCount,$dbpath,$allowed,$errors){
 	 for($i = 0; $i < $photoCount; $i++){

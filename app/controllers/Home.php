@@ -9,23 +9,21 @@ class Home
 
 	public function index()
 	{	
-		
 
-		$data['username'] = empty($_SESSION['USER']) ? 'User':$_SESSION['USER']->email;
-		$data['password'] = empty($_SESSION['USER']) ? 'User':$_SESSION['USER']->password;
 		$data['id'] = empty($_SESSION['USER']) ? 'User':$_SESSION['USER']->id;
-		$admin = new AdminModel;
+		$users = new User;
 		$arr['status'] = 1;
-		$row = $admin->where($arr);
-		$_SESSION['ALBUM'] = $row;
-
-		if(!empty($_SESSION['ALBUM'])){
-			$count = count($_SESSION['ALBUM']);
+		$row = $users->findAll();
+		$_SESSION['Users'] = $row;
+		if(!empty($_SESSION['Users'])){
+			$count = count($_SESSION['Users']);
 
 			for($i = 0 ; $i < $count; $i++){
-				$data['image'][$i] =
-					explode(',',$_SESSION['ALBUM'][$i]->image);
-					$data['title'][$i] = $_SESSION['ALBUM'][$i]->title; 
+				$data['first_name'][$i] = $_SESSION['Users'][$i]->first_name;
+				$data['last_name'][$i] = $_SESSION['Users'][$i]->last_name; 
+				$data['date'][$i] = $_SESSION['Users'][$i]->date;
+				$data['user_image'][$i] = $_SESSION['Users'][$i]->user_image; 
+				$data['user_id'][$i] =  $_SESSION['Users'][$i]->id;
 			}
 		}
 		

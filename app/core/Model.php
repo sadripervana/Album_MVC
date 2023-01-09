@@ -92,6 +92,25 @@ Trait Model
 		return false;
 	}
 
+	public function singlePhotoQuery($POST, $FILES)
+	{
+		$query =  "INSERT INTO $this->table ( image, user_id )
+                     VALUES ( :image, :user_id)";
+		$this->singlePhoto($query,$POST ,$FILES);
+
+		return false;
+	}
+
+
+	public function userPhoto($POST, $FILES)
+	{
+		$query =  "INSERT INTO $this->table ( first_name, last_name, email,password, user_image)
+                     VALUES ( :first_name,:last_name, :email, :password, :user_image)";
+		$this->singlePhotoUser($query,$POST ,$FILES);
+
+		return false;
+	}
+	
 	public function insertImage($POST, $FILES)
 	{
 		

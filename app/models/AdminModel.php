@@ -13,6 +13,22 @@ class AdminModel
 		'status',
 	];
 
+	public function validatePhoto()
+	{
+		if($_FILES){
+			if($_FILES["photo"]["error"][0] == 4)
+			{
+				$this->errors['file'] = "File is required";
+			}
+		}
+		if(empty($this->errors))
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	public function validate($data)
 	{	
 		$this->errors = [];
